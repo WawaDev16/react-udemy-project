@@ -3,3 +3,6 @@ testing
 git add .
 git commit -m "message here"
 git push origin main
+
+git config --global user.email "wawa.dev@gmail.com"
+git config --global user.name "WawaDev16"
