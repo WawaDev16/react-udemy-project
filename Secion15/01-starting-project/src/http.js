@@ -9,6 +9,24 @@ export async function fetchAvailablePlaces() {
   return resData.places;
 }
 
+export async function fetchPosts() {
+  const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const resData = await response.json();
+  if (!response.ok) {
+    throw new Error("failed to fetch posts");
+  }
+  return resData;
+}
+
+export async function fetchComments() {
+  const response = await fetch("https://jsonplaceholder.typicode.com/comments");
+  const resData = await response.json();
+  if (!response.ok) {
+    throw new Error("failed to fetch comments");
+  }
+  return resData;
+}
+
 export async function fetchUserPlaces() {
   const response = await fetch("http://localhost:3000/user-places");
   const resData = await response.json();

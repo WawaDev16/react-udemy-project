@@ -5,7 +5,7 @@ import Modal from "./components/Modal.jsx";
 import DeleteConfirmation from "./components/DeleteConfirmation.jsx";
 import logoImg from "./assets/logo.png";
 import AvailablePlaces from "./components/AvailablePlaces.jsx";
-import { fetchUserPlaces, updateUserPlaces } from "./http.js";
+import { fetchUserPlaces, updateUserPlaces, fetchComments } from "./http.js";
 import Error from "./components/Error.jsx";
 
 function App() {
@@ -23,6 +23,9 @@ function App() {
       setIsFetching(true);
       try {
         const places = await fetchUserPlaces();
+
+        const comments = await fetchComments();
+        console.log("comment", comments);
         setUserPlaces(places);
       } catch (error) {
         setError({ message: error.message || "Failed to fetch user places." });

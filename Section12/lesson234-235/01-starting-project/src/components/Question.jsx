@@ -34,7 +34,7 @@ export default function Question({
         selectedAnswer: answer,
         isCorrect: QUESTIONS[index].answers[0] === answer,
       });
-
+ 
       setTimeout(() => {
         onSelectAnswer(answer);
       }, 2000);
